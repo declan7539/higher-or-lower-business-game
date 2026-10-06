@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Higher or Lower Business Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Business challenge</p>
+          <h1>Higher or Lower</h1>
+        </div>
+        <button id="new-game-btn" class="secondary-btn">New Game</button>
+      </header>
+
+      <main class="game-panel">
+        <div class="scoreboard" aria-label="Game score summary">
+          <div class="stat-box">
+            <span class="label">Score</span>
+            <strong id="score">0</strong>
+          </div>
+          <div class="stat-box">
+            <span class="label">Best streak</span>
+            <strong id="best-streak">0</strong>
+          </div>
+          <div class="stat-box">
+            <span class="label">Round</span>
+            <strong id="round">1</strong>
+          </div>
+        </div>
+
+        <div class="status-row">
+          <div>
+            <p class="label small-label">Question</p>
+            <h2 id="prompt-text">Which company has the higher annual revenue?</h2>
+          </div>
+        </div>
+
+        <div class="comparison-grid" aria-live="polite">
+          <article class="company-card left-card" id="left-card">
+            <div class="company-topline">
+              <span class="badge">A</span>
+              <span class="industry" id="left-industry">Industry</span>
+            </div>
+            <h3 id="left-name">Company</h3>
+            <div class="metric-block">
+              <span class="metric-label">Owner</span>
+              <strong id="left-value">?</strong>
+            </div>
+          </article>
+
+          <div class="versus-pill">VS</div>
+
+          <article class="company-card right-card" id="right-card">
+            <div class="company-topline">
+              <span class="badge">B</span>
+              <span class="industry" id="right-industry">Industry</span>
+            </div>
+            <h3 id="right-name">Company</h3>
+            <div class="metric-block">
+              <span class="metric-label">Owner</span>
+              <strong id="right-value">?</strong>
+            </div>
+          </article>
+        </div>
+
+        <div class="choices">
+          <button id="higher-btn" class="primary-btn">Higher</button>
+          <button id="lower-btn" class="secondary-btn alt">Lower</button>
+        </div>
+
+        <p id="feedback" class="feedback" aria-live="assertive">Choose the company with the higher revenue.</p>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
